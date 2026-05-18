@@ -1,0 +1,18 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "lock": false,
+  "tasks": {
+    "check": "deno check manifest.ts workflows/*.ts functions/*.ts triggers/*.ts",
+    "test": "deno test --allow-env --allow-read --allow-net"
+  },
+  "imports": {
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.14.2/",
+    "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.8.0/"
+  },
+  "lint": {
+    "include": ["functions/", "workflows/", "triggers/", "manifest.ts"]
+  },
+  "fmt": {
+    "include": ["functions/", "workflows/", "triggers/", "manifest.ts"]
+  }
+}

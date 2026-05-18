@@ -1,0 +1,36 @@
+{
+  "display_information": {
+    "name": "pattern-b-translate",
+    "description": "国旗リアクションでメッセージを翻訳してスレッドに返信する Bot (ハンズオン教材)",
+    "background_color": "#4A154B"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "translate-bot",
+      "always_online": true
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "reactions:read",
+        "channels:history",
+        "groups:history",
+        "chat:write"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "reaction_added"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}

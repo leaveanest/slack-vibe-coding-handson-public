@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+  "lock": false,
+  "tasks": {
+    "deploy": "slack deploy",
+    "check": "deno check manifest.ts functions/ai_format_step.ts",
+    "fmt": "deno fmt"
+  },
+  "imports": {
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.14.2/",
+    "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.8.0/"
+  },
+  "fmt": {
+    "include": ["./**/*.ts"],
+    "exclude": ["./docs/**"]
+  }
+}

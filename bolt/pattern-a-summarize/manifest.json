@@ -1,0 +1,42 @@
+{
+  "display_information": {
+    "name": "pattern-a-summarize",
+    "description": "/summarize でスレッドを AI 要約 (ハンズオン教材)",
+    "background_color": "#4A154B"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "summarize-bot",
+      "always_online": true
+    },
+    "slash_commands": [
+      {
+        "command": "/summarize",
+        "description": "スレッドを AI で要約してエフェメラルで返す",
+        "usage_hint": "<thread_ts>",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "commands",
+        "channels:history",
+        "groups:history",
+        "chat:write"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": []
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://deno.land/x/deno@v1.40.0/cli/schemas/config-file.v1.json",
+  "imports": {
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.14.2/",
+    "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.8.0/"
+  },
+  "tasks": {
+    "check": "deno check manifest.ts functions/*.ts workflows/*.ts triggers/*.ts datastores/*.ts",
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  },
+  "lock": false,
+  "compilerOptions": {
+    "strict": true
+  }
+}

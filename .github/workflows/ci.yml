@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2@0.13.0
+      - name: Run markdownlint
+        run: markdownlint-cli2 "**/*.md" "#node_modules" "#**/node_modules"
+
+  typescript-check:
+    name: TypeScript check (Bolt patterns)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: TypeScript syntax check
+        run: |
+          # 各 Bolt パターンに package.json が出揃ったら有効化される想定。
+          # 現時点ではパターン未実装でも CI green になるよう、存在チェックのみ。
+          shopt -s nullglob
+          patterns=(bolt/pattern-*/package.json)
+          if [ ${#patterns[@]} -eq 0 ]; then
+            echo "No Bolt patterns with package.json yet — skipping tsc."
+            exit 0
+          fi
+          for pkg in "${patterns[@]}"; do
+            dir="$(dirname "$pkg")"
+            echo "::group::$dir"
+            (cd "$dir" && npm ci && npx tsc --noEmit) || exit 1
+            echo "::endgroup::"
+          done
+
+  manifest-validate:
+    name: Slack manifest validate (Platform patterns)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - name: Deno type check
+        run: |
+          shopt -s nullglob
+          manifests=(platform/pattern-*/manifest.ts)
+          if [ ${#manifests[@]} -eq 0 ]; then
+            echo "No Platform patterns with manifest.ts yet — skipping deno check."
+            exit 0
+          fi
+          for m in "${manifests[@]}"; do
+            dir="$(dirname "$m")"
+            echo "::group::$m"
+            # cd into the pattern dir so deno picks up the pattern's deno.json import map
+            (cd "$dir" && deno check manifest.ts) || exit 1
+            echo "::endgroup::"
+          done

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "//": "Slack CLI (slack run / slack deploy) はこのファイルの imports を見て依存解決します。",
+  "//1": "deno-slack-sdk: マニフェスト / カスタム関数 / ワークフロー / トリガーの DSL",
+  "//2": "deno-slack-api: 関数ランタイムから Slack Web API を呼ぶための型付きクライアント",
+  "imports": {
+    "deno-slack-sdk/": "https://deno.land/x/deno_slack_sdk@2.14.2/",
+    "deno-slack-api/": "https://deno.land/x/deno_slack_api@2.8.0/",
+    "std/": "https://deno.land/std@0.224.0/"
+  },
+  "lock": false,
+  "tasks": {
+    "//": "ハンズオン中の型チェック用。slack CLI 経由でなくても整合性を素早く確認できる。",
+    "check": "deno check manifest.ts functions/format_daily_report.ts workflows/daily_report_workflow.ts triggers/link_trigger.ts"
+  },
+  "fmt": {
+    "include": ["manifest.ts", "functions", "workflows", "triggers"]
+  },
+  "lint": {
+    "include": ["manifest.ts", "functions", "workflows", "triggers"]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  // Markdown lint config for slack-vibe-coding-handson
+  // ref: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+  "default": true,
+
+  // 行の最大長は教材性質上ゆるめに
+  "MD013": false,
+
+  // 同じ章で複数の見出しが重複しても OK（パターン間で繰り返すため）
+  "MD024": { "siblings_only": true },
+
+  // インライン HTML は <details> を多用するので許可
+  "MD033": false,
+
+  // 1 ファイル目に必ず h1 は要求しない（テンプレ生成のため）
+  "MD041": false,
+
+  // 末尾のスペースは OK（改行強制のため）
+  "MD009": false
+}
