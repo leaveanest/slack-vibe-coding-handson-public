@@ -18,7 +18,7 @@
 
 | 項目 | 確認内容 |
 |---|---|
-| Google アカウント | Chrome でリバネスナレッジ系または配布用組織アカウントにログイン済み (Google Workspace でも個人アカウントでも可) |
+| Google アカウント | Chrome で配布用組織アカウントにログイン済み (Google Workspace でも個人アカウントでも可) |
 | Codex App | <https://developers.openai.com/codex/app> を開いて操作可能な状態 |
 | 参照ファイル | `docs/event-2026-05-19/google-doc-handout.md` をローカル clone 済 (推奨) または GitHub raw URL から参照可能 |
 | ブラウザ | Chrome のタブが空いていること (Codex App が新規タブで操作する) |
