@@ -23,6 +23,7 @@
 | ZIP ダウンロード (リポジトリ全体) | <https://github.com/leaveanest/slack-vibe-coding-handson-public/archive/refs/heads/main.zip> |
 | Codex App (要 OpenAI ログイン) | <https://developers.openai.com/codex/app> |
 | Slack CLI ドキュメント | <https://docs.slack.dev/tools/slack-cli/> |
+| **Slack Developer Program (サンドボックス作成)** | <https://api.slack.com/developer-program> |
 | アンケート (Google Forms) | 【当日朝、運営が記入】 |
 | Google Meet URL | **【当日朝、運営が記入】** |
 
@@ -48,6 +49,38 @@
 - [ ] **`slack` CLI** が動く — `slack --version`
 - [ ] **`slack login` 完了** — `slack auth list` で workspace が見える
 - [ ] **持参 Slack workspace** がある (sandbox 推奨、自社 dev 環境でも可)
+
+---
+
+## 2.5 Slack workspace 準備 (3 オプション)
+
+> アプリを **インストールする権限** を持った Slack workspace が 1 つ必要です。
+> 下から **当てはまる一番上のオプション** を選んでください。当日その場でも **5 分で sandbox を発行** できます。
+
+### オプション 1 (推奨): 自社 Slack で **アプリインストール権限** を持っている
+
+- そのまま自社 workspace を使えます。後の `slack login` でその workspace を選択するだけで OK
+- 自社の **dev / 検証 workspace** がある場合はそちらを優先 (本番より承認フローが軽い)
+
+### オプション 2: 自分が **オーナー権限を持つ** Slack workspace がある
+
+- 個人で作った workspace や、自分が立ち上げたコミュニティ workspace など
+- こちらもそのまま使えます。`slack login` で選択
+
+### オプション 3 (当日でも 5 分で作成可): **Slack Developer Program のサンドボックス**
+
+オプション 1 / 2 のどちらも当日使えない場合、**Slack Developer Program に登録すれば開発用 workspace を無料で発行** できます。**5 分で完了** します。
+
+1. <https://api.slack.com/developer-program> にアクセス
+2. **「Join the program」** (相当ボタン) をクリック
+3. 既存の Slack アカウント (個人 / 仕事用どちらでも可) でサインイン
+4. プロファイル情報 (氏名・所属など最小限) を入力して登録
+5. **「Create a Sandbox」** から新しい開発用 workspace を作成 (workspace 名 + URL を選ぶ)
+6. 数分以内に新しい workspace が利用可能になる
+7. ターミナルで `slack login` を実行し、表示される workspace 一覧で **今作った sandbox** を選択
+
+> 💡 **5/18 夜のうちに作成しておく** のがおすすめですが、**当日朝でも 5 分** で済みます。
+> sandbox 発行を待っている間、Codex App による App 作成ステップは **並行で進められる** ので時間はムダになりません。
 
 ---
 

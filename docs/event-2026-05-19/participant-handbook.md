@@ -87,11 +87,50 @@
 
 > Mac/Windows 別のセットアップ手順は [`SETUP.md`](../../SETUP.md) §2 (Mac) / §3 (Windows) に詳細あり。
 
-### 3.3 Slack workspace
+### 3.3 Slack workspace (3 オプション)
 
-- [ ] **持参してきた Slack workspace が用意できている** (sandbox 推奨、自社環境でも可)
-  - 推奨: Slack Developer Program の **sandbox**
-  - 可: 自社の **dev / 検証 workspace** (本番 workspace は管理者承認待ちになる可能性あり)
+ハンズオンでは **Slack アプリをインストールできる権限を持った workspace が 1 つ** 必要です。下から **当てはまる一番上のオプション** を選んでください。
+
+#### オプション 1 (推奨): 自社 Slack で **アプリインストール権限** を持っている
+
+- そのまま自社 workspace を使えます
+- 自社に **dev / 検証 workspace** があれば本番より優先 (承認フローが軽い)
+- 後述の `slack login` でその workspace を選択して終わり
+
+#### オプション 2: 自分が **オーナー権限を持つ** Slack workspace がある
+
+- 個人で作った workspace、コミュニティ workspace など
+- そのまま使えます。`slack login` で選択
+
+#### オプション 3 (当日でも 5 分で作成可): **Slack Developer Program のサンドボックス**
+
+上記いずれも当日使えない場合、**Slack Developer Program のサンドボックス workspace を新規発行** できます。**5 分で完了**。詳細手順は §3.3.1 を参照。
+
+- [ ] **上記 3 オプションのいずれかで workspace を確保している** (チェック必須)
+
+#### 3.3.1 サンドボックス workspace 作成手順 (オプション 3 の詳細)
+
+> **強く推奨: 5/18 夜のうちに作成** しておくと当日朝の混乱を回避できます。
+> 当日朝でも 5 分で発行可能。発行待ち時間中に Codex App でのコード生成は並行で進められるので、時間はムダになりません。
+
+1. ブラウザで <https://api.slack.com/developer-program> にアクセス
+2. ページ上部の **「Join the program」** (または「Get Started」相当) ボタンをクリック
+3. Slack アカウントでサインイン (既存の **個人 / 仕事用 Slack アカウントのどちらでも OK**)
+   - Slack アカウント自体を持っていない場合は、その場で無料作成できます
+4. **プロファイル情報** を最小限入力
+   - 氏名 / 所属 / 開発目的のいずれかが聞かれます (5/19 のハンズオン参加でも問題ありません)
+5. 登録完了後、ダッシュボードの **「Create a Sandbox」** (相当ボタン) をクリック
+   - **Workspace name** と **Workspace URL** (サブドメイン) を入力
+   - 例: `vibe-coding-handson-yourname` のような名前にすると区別しやすい
+6. 数分以内に **「Open Workspace」** リンクが表示され、新しい workspace にアクセス可能になる
+   - 自分が **Owner** として参加した状態の workspace ができあがります
+7. ターミナルで `slack login` を実行
+   - ブラウザが開き、認証コード入力後に **workspace 一覧** が表示されます
+   - **作成した sandbox を選択** して接続完了
+   - 確認: `slack auth list` で sandbox の workspace 名が表示されれば OK
+
+> 💡 sandbox の workspace は **アプリのインストール / 管理者承認 / Workflow Builder の利用** がすべて自由にできるため、ハンズオン用途には最適です。
+> 💡 sandbox は **本番 workspace と完全に分離** されているため、自社ポリシーに影響しません。
 
 ### 3.4 OpenAI API キー
 
@@ -430,7 +469,7 @@ slack env add OPENAI_API_KEY sk-xxxx
 ### 9.5 `slack install` で「Approval required」
 
 → 自社の本番 workspace の管理者承認待ちになっている
-→ **sandbox workspace に切り替える** のが一番早い (Slack Developer Program の sandbox を発行 / 当日メンターが手順案内)
+→ **sandbox workspace に切り替える** のが一番早い (§3.3.1 の Slack Developer Program 手順を参照 / 5 分で発行 / 切り替え後は `slack login` で sandbox を選択し直す)
 
 ### 9.6 Bot がメッセージに反応しない
 
