@@ -1,5 +1,5 @@
 {
-  "name": "@slack-vibe-coding-handson/pattern-g-file-analysis",
+  "name": "@slack-vibe-coding-handson-public/pattern-g-file-analysis",
   "version": "0.1.0",
   "private": true,
   "description": "Bolt 案 G: ファイル投稿 AI 解析 Bot (Vision)",

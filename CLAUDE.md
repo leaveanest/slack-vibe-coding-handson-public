@@ -1,4 +1,4 @@
-# CLAUDE.md — slack-vibe-coding-handson
+# CLAUDE.md — slack-vibe-coding-handson-public
 
 ## このリポジトリは何か
 

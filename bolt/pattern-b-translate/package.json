@@ -1,5 +1,5 @@
 {
-  "name": "@slack-vibe-coding-handson/pattern-b-translate",
+  "name": "@slack-vibe-coding-handson-public/pattern-b-translate",
   "version": "0.1.0",
   "private": true,
   "description": "Bolt 案 B: 国旗リアクション翻訳 Bot",

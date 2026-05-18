@@ -1,5 +1,5 @@
 {
-  "name": "@slack-vibe-coding-handson/pattern-a-summarize",
+  "name": "@slack-vibe-coding-handson-public/pattern-a-summarize",
   "version": "0.1.0",
   "private": true,
   "description": "Bolt 案 A: /summarize スレッド要約コマンド",

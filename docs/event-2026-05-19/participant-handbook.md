@@ -107,8 +107,8 @@
 - [ ] 手元に clone 済み:
 
   ```bash
-  git clone https://github.com/leaveanest/slack-vibe-coding-handson.git
-  cd slack-vibe-coding-handson
+  git clone https://github.com/leaveanest/slack-vibe-coding-handson-public.git
+  cd slack-vibe-coding-handson-public
   ```
 
 > 当日朝に「準備が間に合っていない」場合は、事前メールに返信するか Google Meet のチャット欄に連絡してください。フォロー枠を用意しています。
@@ -475,7 +475,7 @@ curl https://api.openai.com/v1/chat/completions \
 1. **リポジトリを社内に持ち帰り**:
 
    ```bash
-   git clone https://github.com/leaveanest/slack-vibe-coding-handson.git
+   git clone https://github.com/leaveanest/slack-vibe-coding-handson-public.git
    ```
 
 2. **社内 Slack workspace で App をインストール**:
@@ -516,7 +516,7 @@ curl https://api.openai.com/v1/chat/completions \
 
 | 用途 | URL |
 |---|---|
-| **リポジトリ** | <https://github.com/leaveanest/slack-vibe-coding-handson> |
+| **リポジトリ** | <https://github.com/leaveanest/slack-vibe-coding-handson-public> |
 | **Codex App** | <https://developers.openai.com/codex/app> |
 | **Slack CLI** | <https://api.slack.com/automation/cli> |
 | **環境構築ガイド (Mac/Win)** | [`SETUP.md`](../../SETUP.md) |

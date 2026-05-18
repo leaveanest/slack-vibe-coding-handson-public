@@ -1,4 +1,4 @@
-# slack-vibe-coding-handson
+# slack-vibe-coding-handson-public
 
 > Slack ハンズオンワークショップ「**Vibe Coding で Slack アプリ開発をマスター**」の教材リポジトリ。
 

@@ -1,4 +1,4 @@
-# AGENTS.md — slack-vibe-coding-handson (共通テンプレ)
+# AGENTS.md — slack-vibe-coding-handson-public (共通テンプレ)
 
 > このファイルは **Codex App / Claude Code / 他のコーディング AI が読み込むプロジェクトルール**です。参加者向けの「お題」は各 `pattern-*/README.md`、AI 向けの「ルール」がここ。
 >

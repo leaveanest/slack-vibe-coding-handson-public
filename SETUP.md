@@ -64,8 +64,8 @@ slack --version  # 動作確認
 ### 2.4 リポジトリ取得
 
 ```bash
-git clone https://github.com/leaveanest/slack-vibe-coding-handson.git
-cd slack-vibe-coding-handson
+git clone https://github.com/leaveanest/slack-vibe-coding-handson-public.git
+cd slack-vibe-coding-handson-public
 cp .env.example .env       # 必要に応じて編集
 ```
 
@@ -117,8 +117,8 @@ slack --version
 ### 3.4 リポジトリ取得
 
 ```bash
-git clone https://github.com/leaveanest/slack-vibe-coding-handson.git
-cd slack-vibe-coding-handson
+git clone https://github.com/leaveanest/slack-vibe-coding-handson-public.git
+cd slack-vibe-coding-handson-public
 cp .env.example .env
 ```
 

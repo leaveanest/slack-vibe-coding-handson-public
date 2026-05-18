@@ -1,5 +1,5 @@
 {
-  "name": "@slack-vibe-coding-handson/pattern-c-mention",
+  "name": "@slack-vibe-coding-handson-public/pattern-c-mention",
   "version": "0.1.0",
   "private": true,
   "description": "Bolt 案 C: メンション質問 Bot (履歴踏まえる)",

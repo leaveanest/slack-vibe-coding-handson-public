@@ -19,8 +19,8 @@
 
 | 項目 | 値 |
 |---|---|
-| GitHub リポジトリ (今日のソース) | <https://github.com/leaveanest/slack-vibe-coding-handson> |
-| ZIP ダウンロード (リポジトリ全体) | <https://github.com/leaveanest/slack-vibe-coding-handson/archive/refs/heads/main.zip> |
+| GitHub リポジトリ (今日のソース) | <https://github.com/leaveanest/slack-vibe-coding-handson-public> |
+| ZIP ダウンロード (リポジトリ全体) | <https://github.com/leaveanest/slack-vibe-coding-handson-public/archive/refs/heads/main.zip> |
 | Codex App (要 OpenAI ログイン) | <https://developers.openai.com/codex/app> |
 | Slack CLI ドキュメント | <https://docs.slack.dev/tools/slack-cli/> |
 | アンケート (Google Forms) | 【当日朝、運営が記入】 |
@@ -40,7 +40,7 @@
 
 ## 2. 事前準備チェック (10:00 まで)
 
-開始までに **全てチェック済み** であることを確認してください。詳細手順は [`SETUP.md`](https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/SETUP.md) 参照。
+開始までに **全てチェック済み** であることを確認してください。詳細手順は [`SETUP.md`](https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/SETUP.md) 参照。
 
 - [ ] **Codex App** がインストール済み (Mac: `.dmg` / Windows: `.exe`)
 - [ ] **Node.js 20+** が動く — ターミナルで `node -v`
@@ -58,17 +58,17 @@
 
 ### 3.1 ブラウザから ZIP をダウンロード
 
-1. ブラウザで <https://github.com/leaveanest/slack-vibe-coding-handson> を開く
+1. ブラウザで <https://github.com/leaveanest/slack-vibe-coding-handson-public> を開く
 2. 緑色の **`<> Code`** ボタンをクリック
 3. メニューの **`Download ZIP`** をクリック
-   - **直リンク (1 クリックで保存):** <https://github.com/leaveanest/slack-vibe-coding-handson/archive/refs/heads/main.zip>
-4. ダウンロードフォルダに `slack-vibe-coding-handson-main.zip` が保存される
+   - **直リンク (1 クリックで保存):** <https://github.com/leaveanest/slack-vibe-coding-handson-public/archive/refs/heads/main.zip>
+4. ダウンロードフォルダに `slack-vibe-coding-handson-public-main.zip` が保存される
 
 ### 3.2 ZIP を展開
 
 | OS | 手順 |
 |---|---|
-| Mac | `Finder` でダウンロードフォルダを開き ZIP をダブルクリック → 同じ階層に `slack-vibe-coding-handson-main` フォルダが出来る |
+| Mac | `Finder` でダウンロードフォルダを開き ZIP をダブルクリック → 同じ階層に `slack-vibe-coding-handson-public-main` フォルダが出来る |
 | Windows | エクスプローラーで右クリック → **すべて展開** → 展開先を指定 (デフォルトのままで OK) |
 
 ### 3.3 フォルダの中身を確認
@@ -76,7 +76,7 @@
 展開したフォルダの中に以下があるはずです:
 
 ```text
-slack-vibe-coding-handson-main/
+slack-vibe-coding-handson-public-main/
 ├── README.md
 ├── SETUP.md             ← セットアップ詳細
 ├── AGENTS.md            ← Codex App が自動で読むプロジェクトルール
@@ -94,13 +94,13 @@ slack-vibe-coding-handson-main/
 
 ```bash
 # Mac / Linux
-cd ~/Downloads/slack-vibe-coding-handson-main
+cd ~/Downloads/slack-vibe-coding-handson-public-main
 
 # Windows (PowerShell)
-cd $HOME\Downloads\slack-vibe-coding-handson-main
+cd $HOME\Downloads\slack-vibe-coding-handson-public-main
 ```
 
-> 💡 **チームに持ち帰る人** は `git clone https://github.com/leaveanest/slack-vibe-coding-handson.git` の方が後で `git pull` できて便利です。当日のスピード重視なら ZIP で OK。
+> 💡 **チームに持ち帰る人** は `git clone https://github.com/leaveanest/slack-vibe-coding-handson-public.git` の方が後で `git pull` できて便利です。当日のスピード重視なら ZIP で OK。
 
 ---
 
@@ -155,14 +155,14 @@ cd $HOME\Downloads\slack-vibe-coding-handson-main
 
 - **入口 UX:** Slash Command (`/summarize <thread_ts>`)
 - **想定時間:** 30〜40 分
-- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-a-summarize/README.md>
-- **完成版コード:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-a-summarize/src/index.ts>
-- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-a-summarize/HINTS.md>
+- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-a-summarize/README.md>
+- **完成版コード:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-a-summarize/src/index.ts>
+- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-a-summarize/HINTS.md>
 
 #### Codex App に投げるプロンプト例
 
 ```text
-https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-a-summarize/README.md
+https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-a-summarize/README.md
 の README を読んで、Bolt for TypeScript で /summarize <thread_ts> Slash Command を
 実装してください。
 
@@ -202,14 +202,14 @@ Slack で `/invite @summarize-bot` してから、スレッドのリンクから
 
 - **入口 UX:** リアクション (`reaction_added` イベント)
 - **想定時間:** 30〜35 分
-- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-b-translate/README.md>
-- **完成版コード:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-b-translate/src/index.ts>
-- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-b-translate/HINTS.md>
+- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-b-translate/README.md>
+- **完成版コード:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-b-translate/src/index.ts>
+- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-b-translate/HINTS.md>
 
 #### Codex App に投げるプロンプト例
 
 ```text
-https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/bolt/pattern-b-translate/README.md
+https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pattern-b-translate/README.md
 の README を読んで、Bolt for TypeScript で reaction_added イベントを受ける
 翻訳 Bot を実装してください。
 
@@ -245,15 +245,15 @@ slack run
 
 - **入口 UX:** Link Trigger → OpenForm
 - **想定時間:** 30〜35 分
-- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-d-daily-report/README.md>
-- **Custom Function:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-d-daily-report/functions/format_daily_report.ts>
-- **Workflow:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-d-daily-report/workflows/daily_report_workflow.ts>
-- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-d-daily-report/HINTS.md>
+- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-d-daily-report/README.md>
+- **Custom Function:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-d-daily-report/functions/format_daily_report.ts>
+- **Workflow:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-d-daily-report/workflows/daily_report_workflow.ts>
+- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-d-daily-report/HINTS.md>
 
 #### Codex App に投げるプロンプト例
 
 ```text
-https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-d-daily-report/README.md
+https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-d-daily-report/README.md
 の README を読んで、Slack Platform (Deno SDK 2.x) で日報投稿アプリを実装してください。
 
 要件:
@@ -289,15 +289,15 @@ slack trigger create --trigger-def triggers/link_trigger.ts
 
 - **入口 UX:** Workflow Builder の **「ステップを追加 → Custom → AI で整形」**
 - **想定時間:** 35〜40 分
-- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-k-custom-step/README.md>
-- **Custom Step 本体:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-k-custom-step/functions/ai_format_step.ts>
-- **非エンジニア向け WFB ガイド:** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-k-custom-step/docs/workflow-builder-usage.md>
-- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-k-custom-step/HINTS.md>
+- **READMEへのリンク:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-k-custom-step/README.md>
+- **Custom Step 本体:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-k-custom-step/functions/ai_format_step.ts>
+- **非エンジニア向け WFB ガイド:** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-k-custom-step/docs/workflow-builder-usage.md>
+- **詰まったとき (HINTS):** <https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-k-custom-step/HINTS.md>
 
 #### Codex App に投げるプロンプト例
 
 ```text
-https://github.com/leaveanest/slack-vibe-coding-handson/blob/main/platform/pattern-k-custom-step/README.md
+https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platform/pattern-k-custom-step/README.md
 の README を読んで、Slack Workflow Builder から呼べる「AI で整形」カスタムステップを
 Slack Platform (Deno SDK 2.x) で実装してください。
 

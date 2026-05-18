@@ -68,7 +68,7 @@
 | 用途 | リンク |
 |---|---|
 | アンケート (Google Forms) | QR コード → スライド or 受付机 |
-| GitHub リポジトリ | `github.com/leaveanest/slack-vibe-coding-handson` |
+| GitHub リポジトリ | `github.com/leaveanest/slack-vibe-coding-handson-public` |
 | 各パターンのヒント | 各パターンディレクトリの `HINTS.md` (段階的ヒント、最後の手段) |
 | 当日連絡 | Google Meet チャット欄 (`SOS` で呼ぶ / `Q` で質問) |
 | Codex App | `developers.openai.com/codex/app` |
