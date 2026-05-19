@@ -16,7 +16,7 @@ Codex で生成中に詰まったらここを覗いてください。段階的�
 | --- | --- |
 | Event Subscriptions | `reaction_added` を Subscribe |
 | Bot Token Scope | `reactions:read` |
-| メッセージ取得用 Scope | `channels:history`, `groups:history` |
+| メッセージ取得用 Scope | `channels:read`, `channels:history`, `groups:read`, `groups:history` |
 | 投稿用 Scope | `chat:write` |
 
 ### Lv3 ヒント — チャンネル招待

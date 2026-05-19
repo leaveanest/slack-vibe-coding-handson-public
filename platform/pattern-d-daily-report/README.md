@@ -53,7 +53,7 @@ pattern-d-daily-report/
 
 ## slack CLI でのセットアップ手順
 
-> 前提: `slack` CLI / Deno 1.40+ がインストール済み (リポジトリ root の [SETUP.md](../../SETUP.md) 参照)。
+> 前提: `slack` CLI / Deno 2.x がインストール済み (リポジトリ root の [SETUP.md](../../SETUP.md) 参照)。
 
 ```bash
 # 1. このディレクトリに移動
@@ -101,7 +101,15 @@ Slack Platform (Deno SDK 2.x) で日報投稿アプリを作って。
 - Custom Function は fetch で OpenAI Chat Completions を呼び、
   Slack mrkdwn 形式に整形した文字列を返す
 - 環境変数 OPENAI_API_KEY は SlackFunction の env から読む
-- manifest の outgoingDomains に "api.openai.com" を入れる
+- manifest.ts は functions / workflows / outgoingDomains / botScopes を明示する
+- Custom Function の source_file は manifest.ts からの相対パスで
+  "functions/format_daily_report.ts" と書く ("./" は付けない)
+- Workflow input は interactivity / channel / user を受け取り、OpenForm に interactivity を渡す
+- Trigger は Trigger<typeof DailyReportWorkflow.definition> 型、TriggerTypes.Shortcut、
+  TriggerContextData.Shortcut.interactivity / channel_id / user_id を使う
+- manifest の outgoingDomains に "api.openai.com" を入れ、botScopes は
+  commands / chat:write / chat:write.public を入れる
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
 - ファイル構成: manifest.ts / slack.json / deno.json / .env.example /
   functions/format_daily_report.ts / workflows/daily_report_workflow.ts /
   triggers/link_trigger.ts

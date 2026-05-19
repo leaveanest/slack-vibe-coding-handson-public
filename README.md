@@ -46,7 +46,7 @@ Codex App（OpenAI API）を使って "vibe coding" で Slack アプリをサク
 ざっくり必要なもの：
 
 - Node.js 20+ / npm（Bolt 版）
-- Deno 1.40+ / `slack` CLI（Platform 版）
+- Deno 2.x / `slack` CLI（Platform 版）
 - Codex App（vibe coding 用）
 - OpenAI API キー（当日配布）
 - 開発用 Slack ワークスペース
