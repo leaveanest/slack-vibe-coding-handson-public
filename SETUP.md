@@ -46,10 +46,13 @@ nvm use 20
 # Deno
 brew install deno
 
-# Slack CLI
-brew tap slackapi/slack
-brew install slack
-slack --version  # 動作確認
+# Slack CLI (公式インストーラは最新版を既定で入れる)
+curl -fsSL https://downloads.slack-edge.com/slack-cli/install.sh | bash
+slack version  # 動作確認
+
+# 既に入っている場合は必要に応じて更新確認
+slack upgrade
+slack version
 ```
 
 ### 2.3 Codex App
@@ -100,9 +103,13 @@ echo 'export DENO_INSTALL="$HOME/.deno"' >> ~/.bashrc
 echo 'export PATH="$DENO_INSTALL/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
-# Slack CLI
+# Slack CLI (公式インストーラは最新版を既定で入れる)
 curl -fsSL https://downloads.slack-edge.com/slack-cli/install.sh | bash
-slack --version
+slack version
+
+# 既に入っている場合は必要に応じて更新確認
+slack upgrade
+slack version
 ```
 
 ### 3.3 Codex App
@@ -193,7 +200,7 @@ OPENAI_API_KEY=sk-...
 
 | 症状 | 対処 |
 | --- | --- |
-| `slack: command not found` | `brew install slackapi/slack/slack` 再実行、または PATH 確認 |
+| `slack: command not found` | §2.2 / §3.2 の公式インストーラを再実行、または PATH (`$HOME/.local/bin` など) を確認 |
 | Codex App が起動しない | インストーラを再ダウンロードして上書きインストール / OS のアプリ権限設定を確認 (Mac はシステム設定 → プライバシーとセキュリティ) |
 | `slack install` で「Approval required」 | 既存ワークスペースの管理者承認待ち。sandbox に切り替えるのが早い (§4.4) |
 | `slack run` 起動時 "missing token" | `slack auth list` でログイン状態確認、`slack login` し直す |

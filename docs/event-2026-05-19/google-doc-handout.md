@@ -15,7 +15,7 @@
 
 ---
 
-## 0. 当日リンク早見 (運営記入欄)
+## 0. 当日リンク早見
 
 | 項目 | 値 |
 |---|---|
@@ -24,8 +24,8 @@
 | Codex App (要 OpenAI ログイン) | <https://developers.openai.com/codex/app> |
 | Slack CLI ドキュメント | <https://docs.slack.dev/tools/slack-cli/> |
 | **Slack Developer Program (サンドボックス作成)** | <https://api.slack.com/developer-program> |
-| アンケート (Google Forms) | 【当日朝、運営が記入】 |
-| Google Meet URL | **【当日朝、運営が記入】** |
+| アンケート (Google Forms) | <https://docs.google.com/forms/d/e/1FAIpQLSfMtXQwOp0Jf4Gb0zb3KScmAiWYotd1A5fr0_srEpWKBuVUbw/viewform> |
+| Google Meet URL | 当日 Google Meet で共有 |
 
 ---
 
@@ -46,7 +46,7 @@
 - [ ] **Codex App** がインストール済み (Mac: `.dmg` / Windows: `.exe`)
 - [ ] **Node.js 20+** が動く — ターミナルで `node -v`
 - [ ] **Deno 1.40+** が動く — `deno --version`
-- [ ] **`slack` CLI** が動く — `slack --version`
+- [ ] **最新版の `slack` CLI** が動く — `slack version` (必要なら `slack upgrade`)
 - [ ] **`slack login` 完了** — `slack auth list` で workspace が見える
 - [ ] **持参 Slack workspace** がある (sandbox 推奨、自社 dev 環境でも可)
 
@@ -120,7 +120,7 @@ slack-vibe-coding-handson-public-main/
 ├── platform/            ← Platform 案 (案 D / K など)
 │   ├── pattern-d-daily-report/
 │   └── pattern-k-custom-step/
-└── docs/                ← 運営資料 (参加者用は handbook と当ファイル)
+└── docs/                ← 参加者向け資料 (handbook / cheat sheet / 当ファイル)
 ```
 
 ### 3.4 ターミナルでフォルダに移動
@@ -147,8 +147,8 @@ cd $HOME\Downloads\slack-vibe-coding-handson-public-main
 
 ### 4.2 OpenAI API キーを登録
 
-> **当日 10:10–10:25 のフェーズで運営から個別 DM (1Password 共有 URL) で配布** されます。
-> 配布元は **Slack DM またはメール返信**。Google Meet のチャットには **絶対に貼られません** (公開チャットに API キーが流出するため)。
+> 当日案内される方法で、参加者ごとに **OpenAI API キーを個別配布** します。
+> Google Meet のチャットには **絶対に貼られません** (公開チャットに API キーが流出するため)。
 > **本日 23:59 で破棄される使い捨てキー** です。
 
 1. Codex App の **Settings → API Keys → OpenAI** を開く
@@ -366,21 +366,21 @@ slack env add OPENAI_API_KEY sk-xxxxxxxxxxxxxxxx   # 本番側に env を登録
 
 ---
 
-## 6. 詰まったときの導線 (運営からのお願い)
+## 6. 詰まったときの相談方法
 
 ### 6.1 まず 3 分自分で試す
 
 - 該当パターンの `HINTS.md` を上から順に開く (段階的ヒントになっています)
 - Codex App に **エラーメッセージをそのまま貼って「これを直して」** と書く
 
-### 6.2 それでも詰まったら運営を呼ぶ (5 分以上は粘らない)
+### 6.2 それでも詰まったらスタッフに相談する (5 分以上は粘らない)
 
 | 詰まり方 | 呼び方 |
 |---|---|
 | Codex App が動かない / OpenAI キーがエラー | Google Meet のチャットに「SOS」+ 状況を投稿 |
 | `slack install` / `slack run` が通らない | 同上、症状を 1 行添えて投稿 |
-| Slack 側の権限エラー (`missing_scope` 等) | `manifest.json` のスコープと照合 → 運営呼ぶ |
-| Workflow Builder にカスタムステップが出ない (案 K) | `slack deploy` 済みか確認 → 出てなければ運営呼ぶ |
+| Slack 側の権限エラー (`missing_scope` 等) | `manifest.json` のスコープと照合 → スタッフに相談 |
+| Workflow Builder にカスタムステップが出ない (案 K) | `slack deploy` 済みか確認 → 出てなければスタッフに相談 |
 
 > 💡 **詰まった = 失敗ではなく、面白い学びの素材** です。むしろ呼んでください。
 

@@ -82,7 +82,7 @@
 - [ ] **Codex App** がインストール済み — <https://developers.openai.com/codex/app>
 - [ ] **Node.js 20+** が動く — `node -v`
 - [ ] **Deno 1.40+** が動く — `deno --version`
-- [ ] **`slack` CLI** が動く — `slack --version`
+- [ ] **最新版の `slack` CLI** が動く — `slack version` (必要なら `slack upgrade`)
 - [ ] **`slack login` 完了済み** — `slack auth list` でワークスペースが見える
 
 > Mac/Windows 別のセットアップ手順は [`SETUP.md`](../../SETUP.md) §2 (Mac) / §3 (Windows) に詳細あり。
@@ -463,7 +463,7 @@ slack env add OPENAI_API_KEY sk-xxxx
 ### 9.4 `slack: command not found`
 
 → SETUP.md §2.2 (Mac) / §3.2 (Windows) のインストール手順をもう一度
-→ Mac: `brew install slackapi/slack/slack` の再実行 or PATH 確認
+→ 公式インストーラを再実行、または PATH (`$HOME/.local/bin` など) を確認
 → シェルを再起動 (新しいターミナルを開く)
 
 ### 9.5 `slack install` で「Approval required」
@@ -557,7 +557,7 @@ curl https://api.openai.com/v1/chat/completions \
 |---|---|
 | **リポジトリ** | <https://github.com/leaveanest/slack-vibe-coding-handson-public> |
 | **Codex App** | <https://developers.openai.com/codex/app> |
-| **Slack CLI** | <https://api.slack.com/automation/cli> |
+| **Slack CLI** | <https://docs.slack.dev/tools/slack-cli/> |
 | **環境構築ガイド (Mac/Win)** | [`SETUP.md`](../../SETUP.md) |
 | **アンケート (Google Forms)** | 【ここを埋める】 |
 | **6/8 AWTT のご案内** | 今日のフィードバックを反映した **ブラッシュアップ版** を 40 分でお届けします。今日参加された方は **メンター枠** で来てもらえると嬉しいです |
