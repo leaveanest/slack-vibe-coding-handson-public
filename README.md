@@ -37,6 +37,8 @@ Codex App（OpenAI API）を使って "vibe coding" で Slack アプリをサク
 | ★ K | [pattern-k-custom-step](./platform/pattern-k-custom-step/) | Workflow Builder 用のカスタムステップ |
 | L | [pattern-l-external-auth](./platform/pattern-l-external-auth/) | 外部 API への OAuth 連携 |
 
+Platform アプリで詰まった場合は、実運用に近い参考実装として [leaveanest/slack-utils-channel](https://github.com/leaveanest/slack-utils-channel) を確認してください。Slack チャンネル運用を支援する公開サービス [Slack Utils Channel](https://slack-utils.lne.st/) も参考になります。
+
 ## クイックスタート
 
 ### 1. 環境準備

@@ -100,6 +100,8 @@ slack env add OPENAI_MODEL gpt-4o-mini     # 任意 (省略時は gpt-4o-mini)
 
 このパターンは Codex に対して、次のようなプロンプトで生成できます。
 
+Platform アプリの `manifest.ts` / `slack.json` / Custom Function / Workflow Builder 連携で詰まった場合は、実運用に近い参考実装として [leaveanest/slack-utils-channel](https://github.com/leaveanest/slack-utils-channel) を確認してください。関連サービス紹介: [Slack Utils Channel](https://slack-utils.lne.st/)
+
 ```text
 Slack Platform (Deno SDK 2.x) で Workflow Builder 用のカスタムステップを作って。
 

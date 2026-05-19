@@ -24,6 +24,8 @@
 | Codex App (要 OpenAI ログイン) | <https://developers.openai.com/codex/app> |
 | Slack CLI ドキュメント | <https://docs.slack.dev/tools/slack-cli/> |
 | **Slack Developer Program (サンドボックス作成)** | <https://api.slack.com/developer-program> |
+| Platform アプリ参考実装 | <https://github.com/leaveanest/slack-utils-channel> |
+| Slack Utils Channel 紹介 | <https://slack-utils.lne.st/> |
 | アンケート (Google Forms) | <https://docs.google.com/forms/d/e/1FAIpQLSfMtXQwOp0Jf4Gb0zb3KScmAiWYotd1A5fr0_srEpWKBuVUbw/viewform> |
 | Google Meet URL | 当日 Google Meet で共有 |
 
@@ -49,6 +51,8 @@
 - [ ] **最新版の `slack` CLI** が動く — `slack version` (必要なら `slack upgrade`)
 - [ ] **`slack login` 完了** — `slack auth list` で workspace が見える
 - [ ] **持参 Slack workspace** がある (sandbox 推奨、自社 dev 環境でも可)
+
+> Platform アプリで詰まった場合は、実運用に近い参考実装として <https://github.com/leaveanest/slack-utils-channel> を確認してください。Slack チャンネル運用を支援する公開サービス <https://slack-utils.lne.st/> も紹介用リンクとして共有できます。
 
 ---
 

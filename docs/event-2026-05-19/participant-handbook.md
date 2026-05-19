@@ -21,6 +21,8 @@
 | Google Forms QR コード | 投影スライド + Google Meet チャット欄に貼ります |
 | Google Meet URL | 【ここを埋める】 |
 | 主催側ハンズオン用チャット (Google Meet チャット欄) | Google Meet 内のチャット機能を使用します |
+| Platform アプリ参考実装 | <https://github.com/leaveanest/slack-utils-channel> |
+| Slack Utils Channel 紹介 | <https://slack-utils.lne.st/> |
 | 運営代表者 / 緊急連絡先 | 【ここを埋める】 |
 
 ---
