@@ -96,6 +96,33 @@ slack env add OPENAI_MODEL gpt-4o-mini     # 任意 (省略時は gpt-4o-mini)
 
 詳細な手順は [`docs/workflow-builder-usage.md`](./docs/workflow-builder-usage.md) を参照。
 
+## Codex での生成例
+
+このパターンは Codex に対して、次のようなプロンプトで生成できます。
+
+Platform アプリの `manifest.ts` / `slack.json` / Custom Function / Workflow Builder 連携で詰まった場合は、実運用に近い参考実装として [leaveanest/slack-utils-channel](https://github.com/leaveanest/slack-utils-channel) を確認してください。関連サービス紹介: [Slack Utils Channel](https://slack-utils.lne.st/)
+
+```text
+Slack Platform (Deno SDK 2.x) で Workflow Builder 用のカスタムステップを作って。
+
+要件:
+- ステップ名は "AI で整形"
+- Input: text (string, 必須) / format_style (string enum: formal, casual, bullet, summary, 必須)
+- Output: formatted_text (string)
+- DefineFunction の title / description / input title は WFB に表示される日本語ラベルにする
+- format_style には enum を付け、WFB でドロップダウンになるようにする
+- Custom Function の source_file は manifest.ts からの相対パスで
+  "functions/ai_format_step.ts" と書く ("./" は付けない)
+- manifest.ts は functions: [AIFormatStepFunction]、workflows: []、
+  outgoingDomains: ["api.openai.com"]、botScopes: ["commands", "chat:write", "chat:write.public"]
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
+- OpenAI は npm SDK ではなく fetch で Chat Completions API を呼ぶ
+- デプロイ後に WFB の Custom セクションに出すため、動作確認は slack deploy と
+  slack env add OPENAI_API_KEY <値> を前提にする
+- ファイル構成: manifest.ts / slack.json / deno.json / .env.example /
+  functions/ai_format_step.ts / docs/workflow-builder-usage.md
+```
+
 ### 6. 詰まったら
 
 [`HINTS.md`](./HINTS.md) に詰まりポイント 5 個をまとめている。

@@ -17,7 +17,9 @@ oauth_config:
   scopes:
     bot:
       - reactions:read
+      - channels:read
       - channels:history
+      - groups:read
       - groups:history
       - chat:write
 settings:

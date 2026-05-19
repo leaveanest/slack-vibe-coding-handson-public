@@ -24,6 +24,8 @@
 | Codex App (要 OpenAI ログイン) | <https://developers.openai.com/codex/app> |
 | Slack CLI ドキュメント | <https://docs.slack.dev/tools/slack-cli/> |
 | **Slack Developer Program (サンドボックス作成)** | <https://api.slack.com/developer-program> |
+| Platform アプリ参考実装 | <https://github.com/leaveanest/slack-utils-channel> |
+| Slack Utils Channel 紹介 | <https://slack-utils.lne.st/> |
 | アンケート (Google Forms) | <https://docs.google.com/forms/d/e/1FAIpQLSfMtXQwOp0Jf4Gb0zb3KScmAiWYotd1A5fr0_srEpWKBuVUbw/viewform> |
 | Google Meet URL | 当日 Google Meet で共有 |
 
@@ -45,10 +47,12 @@
 
 - [ ] **Codex App** がインストール済み (Mac: `.dmg` / Windows: `.exe`)
 - [ ] **Node.js 20+** が動く — ターミナルで `node -v`
-- [ ] **Deno 1.40+** が動く — `deno --version`
+- [ ] **Deno 2.x** が動く — `deno --version`
 - [ ] **最新版の `slack` CLI** が動く — `slack version` (必要なら `slack upgrade`)
 - [ ] **`slack login` 完了** — `slack auth list` で workspace が見える
 - [ ] **持参 Slack workspace** がある (sandbox 推奨、自社 dev 環境でも可)
+
+> Platform アプリで詰まった場合は、実運用に近い参考実装として <https://github.com/leaveanest/slack-utils-channel> を確認してください。Slack チャンネル運用を支援する公開サービス <https://slack-utils.lne.st/> も紹介用リンクとして共有できます。
 
 ---
 
@@ -252,6 +256,9 @@ https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/bolt/pa
 - chat.postMessage で同じスレッドに返信
 - Bot 自身のリアクションは無視 (無限ループ防止)
 - 同じ国旗が複数付いても最初の 1 つだけ処理
+- manifest.json に reaction_added event と reactions:read / channels:read /
+  channels:history / groups:read / groups:history / chat:write scope を入れる
+- 起動後は対象チャンネルに /invite @translate-bot する
 - slack install で App を作って slack run で起動できる構成にする
 - AGENTS.md のルールに従ってください
 ```
@@ -293,6 +300,10 @@ https://github.com/leaveanest/slack-vibe-coding-handson-public/blob/main/platfor
 - Link Trigger でチャンネルから起動
 - フォーム: today (長文必須) / tomorrow (長文必須) / feeling (長文任意) / channel (channel_id 必須)
 - OpenForm → Custom Function (OpenAI で Slack mrkdwn に整形) → SendMessage の 3 ステップ Workflow
+- Custom Function の source_file は manifest.ts からの相対パスで "functions/format_daily_report.ts"
+- Trigger は TriggerTypes.Shortcut と TriggerContextData.Shortcut.interactivity / channel_id / user_id を使う
+- manifest.ts に outgoingDomains ["api.openai.com"] と botScopes commands / chat:write / chat:write.public を入れる
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
 - slack run でローカル起動、slack trigger create で Link Trigger を登録
 - AGENTS.md のルールに従ってください
 ```
@@ -339,6 +350,9 @@ Slack Platform (Deno SDK 2.x) で実装してください。
 - Output: formatted_text (string)
 - 内部処理: OpenAI Chat Completions API を format_style ごとの system prompt で呼ぶ
 - manifest.ts の functions に AIFormatStepFunction を登録 (workflows は空でよい)
+- source_file は manifest.ts からの相対パスで "functions/ai_format_step.ts"
+- outgoingDomains ["api.openai.com"] と botScopes commands / chat:write / chat:write.public を入れる
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
 - slack deploy で本番デプロイ → WFB の Custom セクションに出現することを確認
 - AGENTS.md のルールに従ってください
 ```

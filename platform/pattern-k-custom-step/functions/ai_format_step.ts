@@ -62,6 +62,13 @@ const SYSTEM_PROMPTS: Record<string, string> = {
     "あなたは要約のプロです。入力テキストを、3 文以内・最大 200 文字の日本語サマリに要約してください。固有名詞と数字は保持してください。出力は要約本文のみを返してください。",
 };
 
+const TEMPERATURES: Record<string, number> = {
+  formal: 0.2,
+  casual: 0.6,
+  bullet: 0.3,
+  summary: 0.3,
+};
+
 export default SlackFunction(
   AIFormatStepFunction,
   async ({ inputs, env }) => {
@@ -96,7 +103,7 @@ export default SlackFunction(
             { role: "system", content: systemPrompt },
             { role: "user", content: inputs.text },
           ],
-          temperature: 0.3,
+          temperature: TEMPERATURES[inputs.format_style] ?? 0.3,
         }),
       });
 

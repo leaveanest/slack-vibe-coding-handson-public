@@ -79,6 +79,9 @@ bolt/pattern-b-translate/
 > `reactions.get` で取った元メッセージを OpenAI で翻訳し、
 > `chat.postMessage` で同スレッドに返信する Bot を作って。
 > Bot 自身のリアクションは無視、同じ国旗が複数付いたら最初の 1 つだけ処理。
+> manifest.json には reaction_added event と、reactions:read / channels:read /
+> channels:history / groups:read / groups:history / chat:write scope を入れて。
+> 起動後は対象チャンネルに `/invite @translate-bot` することも README に書いて。
 > `slack install` で App を作って `slack run` で起動できる構成にして。
 
 Codex は `AGENTS.md` を読んで Socket Mode / Bot ループ防止 / Slack CLI フローを踏まえてコードを生成します。完成版が `src/index.ts` / `manifest.json` にあります。

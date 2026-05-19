@@ -1,8 +1,15 @@
 {
+  "$schema": "https://slack.dev/schemas/foundation/slack.json",
+  "manifest": "manifest.ts",
   "//": "slack CLI と Deno SDK の橋渡し設定。slack CLI はこのファイルを見て hook を呼び出す。",
-  "//1": "get-hooks は deno-slack-hooks に丸投げするのが最新のお作法 (SDK 2.x)。",
+  "//1": "get-hooks は deno-slack-hooks に丸投げするのが SDK 2.x のお作法。",
   "//2": "deno-slack-hooks がバージョン更新チェック / マニフェスト生成 / build / start などを内部でディスパッチする。",
   "hooks": {
-    "get-hooks": "deno run --config=deno.json -q --allow-read --allow-net https://deno.land/x/deno_slack_hooks@0.7.0/mod.ts"
+    "get-hooks": "deno run --config=deno.json -q --allow-read --allow-net https://deno.land/x/deno_slack_hooks@1.4.0/mod.ts"
+  },
+  "environments": {
+    "local": {
+      "env_file": ".env"
+    }
   }
 }

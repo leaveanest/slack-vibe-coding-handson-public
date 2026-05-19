@@ -21,6 +21,8 @@
 | Google Forms QR コード | 投影スライド + Google Meet チャット欄に貼ります |
 | Google Meet URL | 【ここを埋める】 |
 | 主催側ハンズオン用チャット (Google Meet チャット欄) | Google Meet 内のチャット機能を使用します |
+| Platform アプリ参考実装 | <https://github.com/leaveanest/slack-utils-channel> |
+| Slack Utils Channel 紹介 | <https://slack-utils.lne.st/> |
 | 運営代表者 / 緊急連絡先 | 【ここを埋める】 |
 
 ---
@@ -81,7 +83,7 @@
 
 - [ ] **Codex App** がインストール済み — <https://developers.openai.com/codex/app>
 - [ ] **Node.js 20+** が動く — `node -v`
-- [ ] **Deno 1.40+** が動く — `deno --version`
+- [ ] **Deno 2.x** が動く — `deno --version`
 - [ ] **最新版の `slack` CLI** が動く — `slack version` (必要なら `slack upgrade`)
 - [ ] **`slack login` 完了済み** — `slack auth list` でワークスペースが見える
 
@@ -253,6 +255,9 @@ Bolt for TypeScript で reaction_added イベントを受け、
 国旗 emoji (us / jp / fr / kr / cn) を言語にマッピングして、
 元メッセージを OpenAI で翻訳し chat.postMessage で同スレッドに返信する Bot を作ってください。
 Bot 自身のリアクションは無視、同じ国旗が複数付いても最初の 1 つだけ処理。
+manifest.json には reaction_added event と reactions:read / channels:read /
+channels:history / groups:read / groups:history / chat:write scope を入れてください。
+起動後は対象チャンネルに /invite @translate-bot する手順も README に残してください。
 AGENTS.md / README.md を読んで slack install / slack run で起動できる構成にしてください。
 ```
 
@@ -300,7 +305,10 @@ Slack Platform (Deno SDK 2.x) で日報投稿アプリを作ってください�
 - フォーム: today (必須) / tomorrow (必須) / feeling (任意) / channel (必須)
 - OpenForm → Custom Function → SendMessage の 3 ステップワークフロー
 - Custom Function は fetch で OpenAI Chat Completions を呼んで Slack mrkdwn 形式に整形して返す
-- manifest の outgoingDomains に "api.openai.com" を入れる
+- source_file は manifest.ts からの相対パス ("functions/format_daily_report.ts") で書く
+- Trigger は TriggerTypes.Shortcut と TriggerContextData.Shortcut.interactivity / channel_id / user_id を使う
+- manifest.ts に outgoingDomains ["api.openai.com"] と botScopes commands / chat:write / chat:write.public を入れる
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
 AGENTS.md と README.md を読んでファイル構成も合わせてください。
 ```
 
@@ -345,6 +353,10 @@ Slack Automations (Deno SDK) で Workflow Builder 用のカスタムステップ
 - Input: text (string, 必須) / format_style (enum: formal / casual / bullet / summary, 必須)
 - Output: formatted_text (string)
 - 内部処理: OpenAI Chat Completions を format_style 別の system prompt で呼ぶ
+- source_file は manifest.ts からの相対パス ("functions/ai_format_step.ts") で書く
+- manifest.ts は functions に AIFormatStepFunction、workflows は空配列、outgoingDomains は ["api.openai.com"]
+- botScopes は commands / chat:write / chat:write.public
+- slack.json は deno-slack-hooks の get-hooks、manifest.ts、local の env_file ".env" を設定する
 - slack deploy 後に WFB の Custom タブから見えるようにする
 AGENTS.md / README.md を読んで manifest.ts と functions/ai_format_step.ts を実装してください。
 ```

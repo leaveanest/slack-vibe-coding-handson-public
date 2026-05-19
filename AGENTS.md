@@ -37,6 +37,10 @@ Platform パターン (Deno):
 - `deno-slack-api@2.8.0`
 - OpenAI 呼び出しは **npm 互換ではなく `fetch` で直接** (`api.openai.com` を `manifest.ts` の `outgoingDomains` に追加)
 
+Platform アプリで `slack run` / `slack deploy` / Workflow Builder まわりが動かない場合は、実運用に近い参照実装として [leaveanest/slack-utils-channel](https://github.com/leaveanest/slack-utils-channel) を確認する。特に `manifest.ts`、`slack.json`、Trigger、Custom Function、`outgoingDomains`、`botScopes` の書き方を優先して参照する。
+
+関連サービス紹介: [Slack Utils Channel](https://slack-utils.lne.st/)
+
 ## Transport (Bolt パターン)
 
 - **Socket Mode 固定**。HTTP リスナー (`receiver` を自前で構築) / Events API の生 HTTP ハンドラを生成してはいけない。理由: ngrok / 公開エンドポイントを参加者に用意させない

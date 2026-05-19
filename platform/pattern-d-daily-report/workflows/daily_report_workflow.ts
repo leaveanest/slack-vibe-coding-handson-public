@@ -31,7 +31,7 @@ const DailyReportWorkflow = DefineWorkflow({
       // 起動したユーザー (= 日報の起票者) をデフォルト author として渡す。
       user: { type: Schema.slack.types.user_id },
     },
-    required: ["interactivity"],
+    required: ["interactivity", "channel", "user"],
   },
 });
 
