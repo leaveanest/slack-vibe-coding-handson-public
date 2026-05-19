@@ -54,8 +54,8 @@ pattern-k-custom-step/
 ### 1. 事前準備
 
 ```bash
-# Slack CLI のセットアップ済み前提
-slack --version
+# 最新版 Slack CLI のセットアップ済み前提
+slack version
 deno --version
 ```
 

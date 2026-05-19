@@ -16,11 +16,11 @@ Slack ハンズオン教材「Vibe Coding で Slack アプリ開発をマスタ�
 |---|---|---|
 | Node.js | **20 系** | Bolt パターンのみ。`engines.node: >=20` を package.json で固定 |
 | Deno | **2.x (`deno_slack_sdk@2.14.2` 互換)** | Platform パターンのみ |
-| Slack CLI | **2.x** | **Bolt パターン・Platform パターンの両方で必須** (2026-05-13 方針変更) |
+| Slack CLI | **最新版** | **Bolt パターン・Platform パターンの両方で必須**。公式手順でインストール / 更新し、`slack version` で確認 |
 | Codex App | 最新 | 参加者環境 |
 | OpenAI モデル | **最新の軽量モデル** (デフォルト) | コスト最適化のため。`OPENAI_MODEL` 環境変数で上書き可 |
 
-**勝手にバージョンを上げない**。とくに Bolt v4 / deno-slack-sdk v3 系の生成は禁止 (5/18 までに動作確認済みの組み合わせは上記)。
+**勝手にバージョンを上げない**。とくに Bolt v4 / deno-slack-sdk v3 系の生成は禁止 (5/18 までに動作確認済みの組み合わせは上記)。ただし Slack CLI は固定せず、公式ドキュメントに従って最新版を使う。
 
 ## 採用 SDK / バージョン
 

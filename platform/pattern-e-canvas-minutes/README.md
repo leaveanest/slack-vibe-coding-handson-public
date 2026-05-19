@@ -35,7 +35,7 @@
 [../../SETUP.md](../../SETUP.md) に従って `slack` CLI と Deno が動く状態にしておいてください。
 
 ```bash
-slack --version
+slack version
 deno --version
 slack auth list   # ワークスペースが登録されていれば OK
 ```
